@@ -535,3 +535,26 @@
 2018-04-07 15:52:16,176 DEBUG:Starting new HTTP connection (1): products.openznet.com
 2018-04-07 15:52:16,355 DEBUG:http://products.openznet.com:80 "GET /api/personalizer/v1.0/devices/byDeviceId/00:25:4c:31:8c:a9 HTTP/1.1" 200 195
 2018-04-07 15:53:00,793 INFO:New User: 0
+2018-04-07 16:37:47,516 INFO:Creating video stream
+2018-04-07 16:37:48,066 INFO:Importing face detector
+2018-04-07 16:37:48,067 INFO:Importing Haarcascades face detector
+2018-04-07 16:37:48,119 INFO:Importing User ID Info
+2018-04-07 16:37:48,119 INFO:Importing face recognizer
+2018-04-07 16:37:49,280 DEBUG:Starting new HTTP connection (1): products.openznet.com
+2018-04-07 16:37:49,464 DEBUG:http://products.openznet.com:80 "GET /api/personalizer/v1.0/devices/byDeviceId/00:25:4c:31:8c:a9 HTTP/1.1" 200 195
+2018-04-07 16:40:02,182 INFO:Creating video stream
+2018-04-07 16:40:02,730 INFO:Importing face detector
+2018-04-07 16:40:02,731 INFO:Importing Haarcascades face detector
+2018-04-07 16:40:02,783 INFO:Importing User ID Info
+2018-04-07 16:40:02,783 INFO:Importing face recognizer
+2018-04-07 16:40:03,933 DEBUG:Starting new HTTP connection (1): products.openznet.com
+2018-04-07 16:40:04,109 DEBUG:http://products.openznet.com:80 "GET /api/personalizer/v1.0/devices/byDeviceId/00:25:4c:31:8c:a9 HTTP/1.1" 200 195
+2018-04-07 16:40:11,943 INFO:New User: 2
+2018-04-07 16:42:09,084 INFO:Creating video stream
+2018-04-07 16:42:09,628 INFO:Importing face detector
+2018-04-07 16:42:09,628 INFO:Importing Haarcascades face detector
+2018-04-07 16:42:09,684 INFO:Importing User ID Info
+2018-04-07 16:42:09,684 INFO:Importing face recognizer
+2018-04-07 16:42:10,836 DEBUG:Starting new HTTP connection (1): products.openznet.com
+2018-04-07 16:42:11,031 DEBUG:http://products.openznet.com:80 "GET /api/personalizer/v1.0/devices/byDeviceId/00:25:4c:31:8c:a9 HTTP/1.1" 200 195
+2018-04-07 16:42:17,228 INFO:New User: 2
