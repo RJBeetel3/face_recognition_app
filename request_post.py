@@ -1,5 +1,6 @@
 import requests
 from urllib.parse import urlencode
+import sys
 
 class UserIDs(object):
     
@@ -67,28 +68,82 @@ def user_change_alert(userID, monitorID, server_url):
     
     return True
 
+def get_device_info(get_url):
 
+    print('retrieving device information')
+    r = requests.get(get_url)
+    print(r.status_code)
+    old_device_data = r.json()
+    print(old_device_data)
+    return old_device_data
+
+def change_profileId(old_device_data, profileId):
+
+    #print('changing profileId to: {}'.format(profileId))
+    # debug code 
+    if profileId == 0: 
+        old_device_data['profileId'] = 5
+        print('changing profileId to: {}'.format(5))
+    elif profileId == 2:
+        old_device_data['profileId'] = 9
+        print('changing profileId to: {}'.format(9))
+    else:
+        pass
+    
+    #old_device_data['profileId'] = profileId
+    new_device_data = old_device_data
+    return new_device_data
+
+def post_profileId_update(post_url, new_device_data):
+
+    print('posting profileId change')
+     
+    # debug code
+    
+    r = requests.post(post_url, json = new_device_data)
+    print(r.status_code)
+    print(r.json())
+
+    
 
 def main():
      
-    userID = 25
+    
+
+    script, profileId = sys.argv
+    profileId = int(profileId)
     #server_url = "http://ce.openznet.com/?deviceID=35&isPC=true"
     #azita 32, so 25
-    server_url = "http://products.openznet.com/api/announcer/v1.0/announce/rob" 
+    
+    get_url = 'http://products.openznet.com/api/personalizer/v1.0/devices/byDeviceId/00:25:4c:31:8c:a9'
+    post_url = 'http://products.openznet.com/api/personalizer/v1.0/devices'
+    
+    old_device_data = get_device_info(get_url)
+    new_device_data = change_profileId(old_device_data, profileId)
+    post_profileId_update(post_url, new_device_data)
+
+    print("deviceId updated")
+
+
+
+    '''
+    deviceID = '00:25:4c:31:8c:a9'
+
+    url = 'http://products.openznet.com/api/announcer/v1.0/announce/:00:25:4C:31:8C:A9' 
     print("changing user to {}".format(userID))
-    print(server_url)
+    print(url)
     userID_change_msg = {
                          "type":"device", 
                          "payload":{"activeProfileId":userID}
                         }
     print(userID_change_msg)
     print("Posting Request")
-    r = requests.post(server_url, json = userID_change_msg)
+    r = requests.post(url, json = userID_change_msg)
     print("Request posted")
     print(r.status_code)
     print(r.json())
     
-                      
+    '''                     
 
 if __name__ == "__main__":
     main()

@@ -473,8 +473,9 @@ def user_change_alert(userID, monitorID, url, log_file, frame):
     return True
 
 
-
-
+#**********************************************************************************
+#******************************** MAIN ********************************************
+#******************************** *************************************************
 def main():
 
     
@@ -499,7 +500,7 @@ def main():
     cam = int(cam)
 
     # size threshold for a face in number of pixels
-    size_threshold = 75
+    size_threshold = 150
     classification_confidence = 60
     
     
